@@ -25,13 +25,11 @@ nav {
     transition: opacity 0.45s ease-out;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 460px) {
     #menunav {
         opacity: 1;
         transition: opacity 0.45s ease-in;
     }
-}
-@media (max-width: 550px) {
     nav a {
         opacity: 1;
         cursor: default;

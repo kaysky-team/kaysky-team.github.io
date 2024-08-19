@@ -1,5 +1,5 @@
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: black;
 }
 
@@ -34,11 +34,34 @@ nav img {
     transition: opacity 0.45s ease-out;
 }
 
+button {
+    background-color: #0f83ff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 0 15px 0;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.4s ease;
+}
+  
+button:hover {
+    background-color: #004b9b;
+}
+
 #header {
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
     background-size: 100%;
     font-style: normal;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
 }
 
 
