@@ -11,9 +11,11 @@ nav {
     color: white;
     align-content: center;
     align-items: center;
+    padding: 6px;
 }
 nav img {
-    top: 11px;
+    top: 18px;
+    left: 15px;
     position: fixed;
 }
 #loader {
@@ -31,6 +33,14 @@ nav img {
     opacity: 0;
     transition: opacity 0.45s ease-out;
 }
+
+#header {
+    background-image: url('/assets/paysagemc_banniere.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-style: normal;
+}
+
 
 @media (max-width: 460px) {
     #menunav {
