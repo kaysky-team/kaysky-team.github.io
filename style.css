@@ -3,11 +3,18 @@
     color: black;
 }
 
+a {
+    text-decoration: none;
+}
 nav {
     overflow: hidden;
     color: white;
     align-content: center;
     align-items: center;
+}
+nav img {
+    top: 11px;
+    position: fixed;
 }
 #loader {
     position: fixed;
@@ -25,9 +32,13 @@ nav {
     transition: opacity 0.45s ease-out;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 460px) {
     #menunav {
         opacity: 1;
         transition: opacity 0.45s ease-in;
+    }
+    nav a {
+        position: fixed;
+        top: -40px;
     }
 }
