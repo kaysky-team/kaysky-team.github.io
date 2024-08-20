@@ -40,12 +40,14 @@ section {
 
 #cb_ips {
     cursor: pointer;
-    transition: color 0.3s ease;
     background-color: black;
     padding: 5px 10px;
+    border-radius: 0.6rem;
+    color: rgb(255, 255, 255);
+    transition: color 0.4s ease;
 }
 #cb_ips:hover {
-    color: rgb(209, 209, 209);
+    color: rgb(176, 176, 176);
 }
 
 button {
@@ -60,26 +62,28 @@ button {
     margin: 0 0 15px 0;
     cursor: pointer;
     border-radius: 12px;
-    transition: background-color 0.4s ease;
+    transition: background-color 0.25s ease;
 } 
 button:hover {
     background-color: #004b9b;
 }
 
 #header {
-    animation: coolBGanim 2s infinite ease;
+    animation: coolBGanim1 4.67s infinite ease;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 120%;
+    min-height: 250px;
     font-style: normal;
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
 }
 
-@keyframes coolBGanim {
+@keyframes coolBGanim1 {
     0% {
         border-bottom-left-radius: 46%;
         border-bottom-right-radius: 46%;
+        background-position: -80px;
     }
     10% {
         border-bottom-left-radius: 60%;
@@ -92,26 +96,28 @@ button:hover {
     50% {
         border-bottom-left-radius: 70%;
         border-bottom-right-radius: 60%;
+        background-position: 0px;
     }
     53% {
-        border-bottom-left-radius: 85%;
-        border-bottom-right-radius: 72%;
+        border-bottom-left-radius: 72%;
+        border-bottom-right-radius: 85%;
     }
     70% {
         border-bottom-left-radius: 55%;
         border-bottom-right-radius: 55%;
     }
-    95% {
+    96% {
         border-bottom-left-radius: 50%;
         border-bottom-right-radius: 50%;
     }
     100% {
         border-bottom-left-radius: 46%;
         border-bottom-right-radius: 46%;
+        background-position: -80px;
     }
 }
 
-@media (max-width: 460px) {
+@media (max-width: 470px) {
     #menunav {
         opacity: 1;
         transition: opacity 0.45s ease-in;
@@ -120,4 +126,5 @@ button:hover {
         position: fixed;
         top: -40px;
     }
+
 }
