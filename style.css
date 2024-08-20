@@ -34,6 +34,10 @@ nav img {
     transition: opacity 0.45s ease-out;
 }
 
+section {
+    padding: 10px 0 0 0;
+}
+
 #cb_ips {
     cursor: pointer;
     transition: color 0.3s ease;
