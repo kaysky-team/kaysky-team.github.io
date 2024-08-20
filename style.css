@@ -34,6 +34,14 @@ nav img {
     transition: opacity 0.45s ease-out;
 }
 
+#cb_ips {
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+#cb_ips:hover {
+    color: rgb(209, 209, 209);
+}
+
 button {
     background-color: #0f83ff;
     border: none;
@@ -47,14 +55,13 @@ button {
     cursor: pointer;
     border-radius: 12px;
     transition: background-color 0.4s ease;
-}
-  
+} 
 button:hover {
     background-color: #004b9b;
 }
 
 #header {
-    animation: coolBGanim 2s ease;
+    animation: coolBGanim 3s ease;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
     background-size: 100%;

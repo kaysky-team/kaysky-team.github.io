@@ -4,5 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loading.remove();
     }, 154)
     
-    
+    document.getElementById('cb_ips').addEventListener('click', () => {
+        new Clipboard().writeText("kaysky.mine.fun");
+    });
 });
