@@ -61,7 +61,7 @@ button:hover {
 }
 
 #header {
-    animation: coolBGanim infinite ease;
+    animation: coolBGanim 99999999s ease;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
     background-size: 100%;
