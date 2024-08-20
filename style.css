@@ -61,7 +61,9 @@ button:hover {
 }
 
 #header {
-    animation: coolBGanim 99999999s ease;
+    animation: coolBGanim infinite ease;
+    border-bottom-left-radius: 46%;
+    border-bottom-right-radius: 46%;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
     background-size: 100%;
