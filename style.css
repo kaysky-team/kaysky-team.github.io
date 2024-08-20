@@ -36,7 +36,9 @@ nav img {
 
 #cb_ips {
     cursor: pointer;
-    transition: color 0.4s ease;
+    transition: color 0.3s ease;
+    background-color: black;
+    padding: 5px 10px;
 }
 #cb_ips:hover {
     color: rgb(209, 209, 209);
