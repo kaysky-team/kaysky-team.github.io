@@ -101,9 +101,13 @@ button:hover {
         border-bottom-left-radius: 55%;
         border-bottom-right-radius: 55%;
     }
-    100% {
+    95% {
         border-bottom-left-radius: 50%;
         border-bottom-right-radius: 50%;
+    }
+    100% {
+        border-bottom-left-radius: 46%;
+        border-bottom-right-radius: 46%;
     }
 }
 
@@ -116,9 +120,4 @@ button:hover {
         position: fixed;
         top: -40px;
     }
-}
-
-
-.dezdz#fsffdsgf fgswfhysufjyjkvsfqgfbuqfbyu {
-    position: 10;
 }
