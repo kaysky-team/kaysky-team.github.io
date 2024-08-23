@@ -7,6 +7,9 @@
 
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="/assets/styles/balises.css">-->
+    <link rel="stylesheet" href="/assets/styles/screenglich.css">
+
     <link rel="shortcut icon" href="/assets/kaysky.png" type="image/x-icon">
 </head>
 <body>
@@ -28,32 +31,63 @@
     </nav>
 
     <center><h1>État du serveur</h1></center>
-    <div id="infos">
+    <div class="infos">
         <div id="status" class="box1">
             <combine>
                 État: 
                 <span id="etat" style="background-color: rgb(190, 13, 199); border-radius: 50%; color: rgba(0, 0, 0, 0);">◯</span>
                 <span id="etatt">Pas de résultat</span>
             </combine>
-            
+            <br>
+            <combine>
+                Ping: 
+                <span id="ping">XXX</span>ms (<span id="expandP" class="clickable">...</span>)
+            </combine>
         </div>
         <div id="stats" class="box2">
             <combine>
                 Joueurs: 
                 <span id="players">__/__</span>
             </combine>
-            
+            <br>
+            <combine>
+                MOTD: 
+                <br>
+                <span id="motd">?</span>
+            </combine>
+            <br>
+            <combine>
+                
+            </combine>
         </div>
+    </div>
+    <div class="infos">
         <div id="serv" class="box3">
             <combine>
-
+                IP:
+                <span id="ip">?</span>
+            </combine>
+            <br>
+            <combine>
+                Port:
+                <span id="port">XXXXX</span>
+            </combine>
+            <br>
+            <combine>
+                Type:
+                <span id="soft">?</span>
+            </combine>
+            <br>
+            <combine>
+                Version:
+                <span id="ver">?.??.??</span>
             </combine>
         </div>
     </div>
     
     
     <center>
-        <h5>Rafraîchisement toutes les 25 secondes</h5>
+        <h5>Rafraîchisement dans <span id="refreshcounter">XX</span> secondes</h5>
     </center>
 </body>
 </html>

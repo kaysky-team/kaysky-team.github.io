@@ -44,7 +44,7 @@ nav a {
 #menunav {
     float: right;
     opacity: 0;
-    transition: opacity 0.45s ease-out;
+    transition: opacity 0.85s ease-out;
 }
 
 section {
@@ -53,8 +53,9 @@ section {
 
 #cb_ips {
     background-color: black;
-    padding: 5px 10px;
-    border-radius: 0.6rem;
+    padding: 5px 12px 0;
+    border-radius: 0.66rem;
+    margin: 0;
     color: rgb(255, 255, 255);
     transition: color 0.4s ease;
 }
@@ -66,12 +67,11 @@ button {
     background-color: #0f83ff;
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 0 0 15px 0;
     border-radius: 12px;
     transition: background-color 0.25s ease;
 } 
@@ -80,7 +80,7 @@ button:hover {
 }
 
 #header {
-    animation: coolBGanim1 4.67s infinite ease;
+    animation: coolBGanim1 5.67s infinite ease;
     background-image: url('/assets/paysagemc_banniere.png');
     background-repeat: no-repeat;
     background-size: 120%;
@@ -131,7 +131,7 @@ button:hover {
 @media (max-width: 480px) {
     #menunav {
         opacity: 1;
-        transition: opacity 0.45s ease-in;
+        transition: opacity 0.85s ease-in;
     }
     nav a {
         position: fixed;

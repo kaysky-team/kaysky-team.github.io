@@ -28,7 +28,7 @@ nav img {
     z-index: 99999999;
 }
 
-#infos {
+.infos {
     display: flex;
 }
 .box1 {
@@ -44,6 +44,14 @@ nav img {
     border-radius: 13px;
     padding: 15px;
     max-width: 65%;
+    width: 101%;
+    margin: 8px;
+}
+.box3 {
+    background-color: rgb(218, 218, 218);
+    border-radius: 13px;
+    padding: 15px;
+    max-width: 100%;
     width: 101%;
     margin: 8px;
 }
@@ -64,7 +72,23 @@ nav a {
 #menunav {
     float: right;
     opacity: 0;
-    transition: opacity 0.45s ease-out;
+    transition: opacity 0.85s ease-out;
+}
+
+@font-face {
+    font-family: 'Minecraftia';
+    src: local('Minecraftia')
+         url('/assets/fonts/Minecraftia-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+#motd {
+    background-image: url(/assets/mcdirt_bg.png);
+    background-size: 150%;
+    background-position: 0 -15px;
+    border-radius: 5px;
+    padding: 2px;
+    font-family: 'Minecraftia';
 }
 
 button {
@@ -87,7 +111,7 @@ button:hover {
 @media (max-width: 480px) {
     #menunav {
         opacity: 1;
-        transition: opacity 0.45s ease-in;
+        transition: opacity 0.85s ease-in;
     }
     nav a {
         position: fixed;

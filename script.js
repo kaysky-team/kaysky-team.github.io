@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 154)
     
     let lang;
-    if (window.navigator.language !== "fr" || "fr-FR" || "en" || "en-US") {
+    if (!window.navigator.language !== "fr" || "fr-FR" || "en" || "en-US") {
         lang = "en-US";
     } else {
         lang = window.navigator.language;
