@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statut de KaySky</title>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets/kaysky.png" type="image/x-icon">
+</head>
+<body>
+    <span id="cursor" style="top: -20px; right: -20px;">🔵</span>
+
+    <div id="loader">
+        <img src="/assets/load.gif" alt="">
+        <h2 style="color: white;">Chargement...</h2>
+    </div>
+
+    <nav>
+        <span id="menunav" class="clickable"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></span>
+        <a href="#header"><img src="/assets/kaysky.png" alt="KaySky" srcset="Logo de KaySky en court" width="21px"></a>
+        <a href="/about" style="padding: 0 0 0 42px">À propos</a>
+        <a href="/wiki" style="padding: 0 0 0 6px;">Wiki</a>
+        <a href="/discord?r=YhRPVaWk5G" style="padding: 0 0 0 6px;">Discord</a>
+        <a href="/vote" style="padding: 0 0 0 6px;">Vote</a>
+        <a href="/team" style="padding: 0 0 0 6px;">Équipe</a>
+    </nav>
+
+    <center><h1>État du serveur</h1></center>
+    <div id="infos">
+        <div id="status" class="box1">
+            <combine>
+                État: 
+                <span id="etat" style="background-color: rgb(190, 13, 199); border-radius: 50%; color: rgba(0, 0, 0, 0);">◯</span>
+                <span id="etatt">Pas de résultat</span>
+            </combine>
+            
+        </div>
+        <div id="stats" class="box2">
+            <combine>
+                Joueurs: 
+                <span id="players">__/__</span>
+            </combine>
+            
+        </div>
+        <div id="serv" class="box3">
+            <combine>
+
+            </combine>
+        </div>
+    </div>
+    
+    
+    <center>
+        <h5>Rafraîchisement toutes les 25 secondes</h5>
+    </center>
+</body>
+</html>

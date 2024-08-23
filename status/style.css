@@ -28,6 +28,26 @@ nav img {
     z-index: 99999999;
 }
 
+#infos {
+    display: flex;
+}
+.box1 {
+    background-color: rgb(218, 218, 218);
+    border-radius: 13px;
+    padding: 15px;
+    max-width: 35%;
+    width: 101%;
+    margin: 8px;
+}
+.box2 {
+    background-color: rgb(218, 218, 218);
+    border-radius: 13px;
+    padding: 15px;
+    max-width: 65%;
+    width: 101%;
+    margin: 8px;
+}
+
 nav a {
     top: 0;
     position: initial;

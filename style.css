@@ -1,6 +1,8 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: black;
+    cursor: none;
+    font-weight: 100;
 }
 
 a {
@@ -14,9 +16,21 @@ nav {
     padding: 6px;
 }
 nav img {
-    top: 18px;
+    top: 16px;
     left: 15px;
     position: fixed;
+}
+
+#cursor {
+    position: fixed;
+    pointer-events: none;
+    color: rgb(0, 120, 215);
+    z-index: 99999999;
+}
+
+nav a {
+    top: 0;
+    position: initial;
 }
 #loader {
     position: fixed;
@@ -28,18 +42,16 @@ nav img {
     background-color: black;
 }
 #menunav {
-    cursor: pointer;
     float: right;
     opacity: 0;
     transition: opacity 0.45s ease-out;
 }
 
 section {
-    padding: 10px 0 0 0;
+    padding: 10px 0 10px 0;
 }
 
 #cb_ips {
-    cursor: pointer;
     background-color: black;
     padding: 5px 10px;
     border-radius: 0.6rem;
@@ -60,7 +72,6 @@ button {
     display: inline-block;
     font-size: 16px;
     margin: 0 0 15px 0;
-    cursor: pointer;
     border-radius: 12px;
     transition: background-color 0.25s ease;
 } 
@@ -117,7 +128,7 @@ button:hover {
     }
 }
 
-@media (max-width: 470px) {
+@media (max-width: 480px) {
     #menunav {
         opacity: 1;
         transition: opacity 0.45s ease-in;
@@ -126,5 +137,7 @@ button:hover {
         position: fixed;
         top: -40px;
     }
-
+    #cursor {
+        visibility: hidden;
+    }
 }
