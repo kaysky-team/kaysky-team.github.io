@@ -57,8 +57,9 @@ async function loop(id) {
             console.log('#ver en cours de modification...');
             document.getElementById('ver').textContent = info.version;
             console.log('#logo en cours de modification...');
+            console.error('#logo n\'a pas été modifiée à cause d\'une erreur')
             console.log('#motd en cours de modification...');
-            document.getElementById('motd').innerHTML = replaceMinecraftCodes(info.motd[0]);
+            document.getElementById('motd').innerHTML = replaceMinecraftCodes(info.motd[0] + info.motd[1]);
             console.log('#ip en cours de modification...');
             document.getElementById('ip').textContent = info.value
             console.log('#port en cours de modification...');
@@ -83,7 +84,7 @@ async function loop(id) {
             console.error('Error fetching data:', error);
         }
 
-        await wait(25000);
+        await wait(10.toString() + "000");
         loop('datas');
     }
 }
