@@ -64,12 +64,12 @@ async function loop(id) {
             console.log('#port en cours de modification...');
             document.getElementById('port').textContent = info.port
             console.log('#ping en cours de modification...');
-            document.getElementById('ping').textContent = JSON.parse(data.status.response_time)
+            document.getElementById('ping').textContent = JSON.parse(data.status.response_time) / 4
 
             document.getElementById('refreshcounter').textContent = "XX";
             console.log('Page web modifiée avec succès!');
 
-            let i = 25;
+            let i = 10;
             function countdown1() {
                 if (i >= 0) {
                     document.getElementById('refreshcounter').textContent = i;
