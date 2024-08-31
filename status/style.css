@@ -79,8 +79,6 @@ nav a {
     font-family: 'Minecraftia';
     src: local('Minecraftia')
          url('/assets/fonts/Minecraftia-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 #motd {
     background-image: url(/assets/mcdirt_bg.png);
