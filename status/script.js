@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => loop('datas'), 965);
 });
 
-
 function replaceMinecraftCodes(text) {
     if (typeof text !== 'string') {
         console.error('Le texte fourni n\'est pas une chaîne:', text);

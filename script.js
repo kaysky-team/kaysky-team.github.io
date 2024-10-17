@@ -14,10 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.localStorage.setItem('language', lang);
     }
 
-    document.getElementById('cb_ips').addEventListener('click', () => {
-        alert("L'appui-pour-copier est indisnonible, nous essayons de régler le problème. S'il vous plaît, copier-le manuellement!")
-    });
-
     function loop(id) {
         if (id === "cur") {
             const cursor = document.getElementById('cursor');
@@ -40,5 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
-    loop('cur')
+    loop('cur');
+
+    document.getElementById("cb_ips").addEventListener("click", function() {
+        const textToCopy = "kaysky.mine.fun";
+        
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    alert("L'IP du serveur est enregistré dans votre presse-papier avec succès et prêt à être utiliser!");
+                })
+                .catch(err => {
+                    console.error("Erreur lors de la copie du texte : ", err);
+                    alert("Erreur lors de la copie de l'IP")
+                });
+        } else {
+            const textarea = document.createElement("textarea");
+            textarea.value = textToCopy;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("L'IP du serveur est enregistré dans votre presse-papier avec succès et prêt à être utiliser!");
+        }
+    });
 });

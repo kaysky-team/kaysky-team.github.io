@@ -8,12 +8,17 @@
 a {
     text-decoration: none;
 }
+section a {
+    text-decoration: underline;
+}
 nav {
     overflow: hidden;
     color: white;
     align-content: center;
     align-items: center;
-    padding: 6px;
+    padding: 8px;
+    margin-top: 8px;
+    margin-left: 5px;
 }
 nav img {
     top: 16px;
@@ -42,13 +47,15 @@ nav a {
     background-color: black;
 }
 #menunav {
-    float: right;
+    position: fixed;
+    left: 91%;
     opacity: 0;
-    transition: opacity 0.85s ease-out;
+    top: -30px;
+    transition: all 0.85s ease-out;
 }
 
 section {
-    padding: 10px 0 10px 0;
+    padding: 5px 10px;
 }
 
 #cb_ips {
@@ -88,6 +95,7 @@ button:hover {
     font-style: normal;
     border-top-left-radius: 20%;
     border-top-right-radius: 20%;
+    margin-top: 45px;
 }
 
 @keyframes coolBGanim1 {
@@ -131,9 +139,14 @@ button:hover {
 @media (max-width: 480px) {
     #menunav {
         opacity: 1;
-        transition: opacity 0.85s ease-in;
+        top: 12px;
+        transition: all 0.85s ease-in;
     }
     nav a {
+        position: fixed;
+        top: -40px;
+    }
+    nav span.clickable {
         position: fixed;
         top: -40px;
     }
