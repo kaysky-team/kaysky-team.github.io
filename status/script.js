@@ -58,7 +58,7 @@ async function loop(id) {
             document.getElementById('ver').textContent = info.version;
             console.log('#logo en cours de modification...');
             console.log('#motd en cours de modification...');
-            document.getElementById('motd').innerHTML = replaceMinecraftCodes(info.motd[0]);
+            document.getElementById('motd').innerHTML = `${replaceMinecraftCodes(info.motd[0])}<br>${replaceMinecraftCodes(info.motd[1])}`;
             console.log('#ip en cours de modification...');
             document.getElementById('ip').textContent = info.value
             console.log('#port en cours de modification...');
@@ -70,21 +70,43 @@ async function loop(id) {
             console.log('Page web modifiée avec succès!');
 
             let i = 25;
-            function countdown1() {
-                if (i >= 0) {
-                    document.getElementById('refreshcounter').textContent = i;
+            document.getElementById('refreshcounter').textContent = i;
+            let interval = setInterval(() => {
+                if (i) {
                     i--;
-                    setTimeout(countdown1, 1000);
+                    document.getElementById('refreshcounter').textContent = i;
+                } else {
+                    document.getElementById('refreshcounter').textContent = i;
+                    clearInterval(interval);
                 }
-            }
-            countdown1();
-
+            }, 1000);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
 
         await wait(25000);
         loop('datas');
+    } else if (id === "§k") {
+        const mccode = document.querySelectorAll('span.randomchar-mcstyle'); // tous les §k
+
+        const chars = [
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",
+            "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
+            "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~",
+            "é", "è", "ê", "ë", "à", "â", "ä", "ç", "ô", "ö", "ù", "û", "ü", "î", "ï", "ÿ", "œ", "æ"
+        ] // array de caracteres
+        
+        mccode.forEach((element) => { //chaque elem
+            function getRandomCharacter() { // fonction pour prendre au hasard
+                const randomIndex = Math.floor(Math.random() * chars.length); // random
+                return chars[randomIndex]; // returne le caractère choisi
+            }
+            const char = getRandomCharacter(); // appelle la fonction
+            element.innerHTML = char; // mettre dans le document html!
+        });
+        await wait(20); // répétez pour
+        loop('§k'); // faire comme mc
     }
 }
 
@@ -95,7 +117,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2);
     
     loop('cur');
-    setTimeout(() => loop('datas'), 965);
+    setTimeout(() => {
+        loop('datas');
+        loop('§k');
+    }, 465);
 });
 
 function replaceMinecraftCodes(text) {
@@ -125,7 +150,7 @@ function replaceMinecraftCodes(text) {
         '§l': '<span style="font-weight: bold;">',
         '§n': '<span style="text-decoration: underline;">',
         '§m': '<span style="text-decoration: line-through;">',
-        '§k': '<span style="font-family: monospace;">'
+        '§k': '<span class="randomchar-mcstyle">'
     };
 
     let formattedText = text.replace(/§[0-9a-fklmnor]/g, function(match) {
@@ -137,5 +162,9 @@ function replaceMinecraftCodes(text) {
 
     const diff = Math.max(openTagsCount - closeTagsCount, 0);
 
-    return formattedText + '</span>'.repeat(diff);
+    if (!text.match(/§/g)) {
+        return `<span style="color: white;">${text}</span>`;
+    } else {
+        return formattedText + '</span>'.repeat(diff);
+    }
 }
