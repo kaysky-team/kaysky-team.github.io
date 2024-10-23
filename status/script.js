@@ -57,6 +57,7 @@ async function loop(id) {
             console.log('#ver en cours de modification...');
             document.getElementById('ver').textContent = info.version;
             console.log('#logo en cours de modification...');
+            console.error('#logo n\'a pas été modifiée à cause d\'une erreur')
             console.log('#motd en cours de modification...');
             document.getElementById('motd').innerHTML = `${replaceMinecraftCodes(info.motd[0])}<br>${replaceMinecraftCodes(info.motd[1])}`;
             console.log('#ip en cours de modification...');
@@ -64,12 +65,12 @@ async function loop(id) {
             console.log('#port en cours de modification...');
             document.getElementById('port').textContent = info.port
             console.log('#ping en cours de modification...');
-            document.getElementById('ping').textContent = JSON.parse(data.status.response_time)
+            document.getElementById('ping').textContent = JSON.parse(data.status.response_time) / 4
 
             document.getElementById('refreshcounter').textContent = "XX";
             console.log('Page web modifiée avec succès!');
 
-            let i = 25;
+            let i = 15;
             document.getElementById('refreshcounter').textContent = i;
             let interval = setInterval(() => {
                 if (i) {
@@ -83,8 +84,7 @@ async function loop(id) {
         } catch (error) {
             console.error('Error fetching data:', error);
         }
-
-        await wait(25000);
+        await wait(15000);
         loop('datas');
     } else if (id === "§k") {
         const mccode = document.querySelectorAll('span.randomchar-mcstyle'); // tous les §k
