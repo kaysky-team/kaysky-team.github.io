@@ -1,9 +1,0 @@
-@media (max-width: 406px) {
-    body div, body center, body nav {
-        display: none;
-    }
-    body {
-        display: block;
-        background-color: red;
-    }
-}

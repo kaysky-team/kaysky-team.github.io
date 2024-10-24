@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<center id="scriptjs_rescue"></center>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -23,12 +24,12 @@
         <span id="menunav" class="clickable"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></span>
         <a href="/"><img src="/assets/kaysky.png" alt="KaySky" srcset="Logo de KaySky en court" width="21px"></a>
         
-        <a href="/about" style="padding: 0 0 0 42px">À propos</a>
+        <a href="/about" style="padding: 0 0 0 43px">À propos</a>
         <a href="/wiki" style="padding: 0 0 0 6px;">Wiki</a>
         <a href="/discord?r=3FPESVzM3x" style="padding: 0 0 0 6px;">Discord</a>
         <a href="/vote" style="padding: 0 0 0 6px;">Vote</a>
         <a href="/team" style="padding: 0 0 0 6px;">Équipe</a>
-        <span id="opensettings" style="padding: 0 0 0 6px;">Paramètres</span>
+        <span id="opensettings" style="padding: 0 0 0 6px;" class="clickable">Paramètres</span>
     </nav>
 
     <center><h1>État du serveur</h1></center>
@@ -36,8 +37,8 @@
         <div id="status" class="box1">
             <combine>
                 État: 
-                <span id="etat" style="background-color: rgb(190, 13, 199); border-radius: 50%; color: rgba(0, 0, 0, 0);">◯</span>
-                <span id="etatt">Pas de résultat</span>
+                <span id="etatt" style="background-color: rgb(190, 13, 199); border-radius: 50%; color: rgba(0, 0, 0, 0);">◯</span>
+                <span id="etat">Pas de résultat</span>
             </combine>
             <br>
             <combine>
@@ -54,7 +55,7 @@
             <combine>
                 MOTD: 
                 <br>
-                <span id="motd">?</span>
+                <span id="motd" style="color: white;">?</span>
             </combine>
             <br>
             <combine>
@@ -64,16 +65,6 @@
     </div>
     <div class="infos">
         <div id="serv" class="box3">
-            <combine>
-                IP:
-                <span id="ip">?</span>
-            </combine>
-            <br>
-            <combine>
-                Port:
-                <span id="port">XXXXX</span>
-            </combine>
-            <br>
             <combine>
                 Type:
                 <span id="soft">_____</span>
@@ -86,9 +77,14 @@
         </div>
     </div>
     
+    <br>
     
     <center>
-        <h5>Rafraîchisement dans <span id="refreshcounter">??</span> secondes</h5>
+        <font style="font-size: 23px;" id="ipshow"></font>
+        <br>
+        <font style="font-size: 15px;">Rafraîchisement dans <span id="refreshcounter">??</span> secondes</font>
+        <br><br><br><br>
+        <img src="../assets/unknownimg.png" alt="" width="125px" style="border-radius: 5px;" id="logo">
     </center>
 </body>
 </html>

@@ -4,7 +4,7 @@ function wait(ms) {
     });
 }
 
-async function loop(id) {
+async function loop(id, plus) {
     if (id === "cur") {
         const cursor = document.getElementById('cursor');
 
@@ -26,46 +26,67 @@ async function loop(id) {
             });
         });
     } else if (id === "datas") {
-        let ip = "kaysky.mine.fun";
+        let ip = "91.197.6.247:25570";
         const targetUrl = `https://api.7games.ga/v2/server/?ip=${ip}`;
         const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`;
 
         try {
             const response = await fetch(proxyUrl);
-            console.warn(proxyUrl)
+            console.warn(proxyUrl);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
 
             const data = await response.json();
             let info = JSON.parse(data.contents);
+
             
-            console.log("Fetched successfully!");
-            console.log('Page web en cours de modification...');
-            console.log('#players en cours de modification...');
-            document.getElementById('players').textContent = info.players + "/" + info.playersmax;
-            console.log('#etat en cours de modification...');
-            info.online ? document.getElementById('etat').style.backgroundColor = "green" : document.getElementById('etat').style.backgroundColor = "red";
-            document.getElementById('etat').style.color = "rgb(240, 240, 240)";
-            document.getElementById('etat').style.borderRadius = "7px";
-            if (document.getElementById('etatt')) document.getElementById('etatt').remove();
-            document.getElementById('etat').style.padding = "3px";
-            document.getElementById('etat').style.transform = "translateY(2px)";
-            document.getElementById('etat').style.backgroundColor === "green" ? document.getElementById('etat').textContent = "ﾠEn ligneﾠ" : document.getElementById('etat').textContent = "ﾠHors ligneﾠ";
-            console.log('#soft en cours de modification...');
-            document.getElementById('soft').textContent = info.software;
-            console.log('#ver en cours de modification...');
-            document.getElementById('ver').textContent = info.version;
-            console.log('#logo en cours de modification...');
-            console.error('#logo n\'a pas été modifiée à cause d\'une erreur')
-            console.log('#motd en cours de modification...');
-            document.getElementById('motd').innerHTML = `${replaceMinecraftCodes(info.motd[0])}<br>${replaceMinecraftCodes(info.motd[1])}`;
-            console.log('#ip en cours de modification...');
-            document.getElementById('ip').textContent = info.value
-            console.log('#port en cours de modification...');
-            document.getElementById('port').textContent = info.port
-            console.log('#ping en cours de modification...');
-            document.getElementById('ping').textContent = JSON.parse(data.status.response_time) / 4
+            if (info.icon !== null && info.motd !== null && info.players !== null && info.playersmax !== null && info.version !== null && info.software !== null && info.port !== null) {
+                console.log("Fetched successfully!");
+                console.log('Page web en cours de modification...');
+                console.log('#etat en cours de modification...');
+                document.getElementById('etat').style.backgroundColor = "green";
+                document.getElementById('etat').style.padding = "3px 20px";
+                document.getElementById('etat').style.color = "rgb(240, 240, 240)";
+                document.getElementById('etat').style.borderRadius = "7px";
+                if (document.getElementById('etatt')) document.getElementById('etatt').remove();
+                document.getElementById('etat').textContent = "En Ligne";
+                console.log('#players en cours de modification...');
+                document.getElementById('players').textContent = info.players + "/" + info.playersmax
+                console.log('#soft en cours de modification...');
+                document.getElementById('soft').textContent = info.software;
+                console.log('#ver en cours de modification...');
+                document.getElementById('ver').textContent = info.version;
+                console.log('#logo en cours de modification...');
+                document.getElementById('logo').src = info.icon.replaceAll('\\', '')
+                console.log('#motd en cours de modification...');
+                document.getElementById('motd').innerHTML = `${replaceMinecraftCodes(info.motd[0])}<br>${replaceMinecraftCodes(info.motd[1])}`;
+                console.log('#port en cours de modification...');
+                document.getElementById('port').textContent = info.port
+                console.log('#ping en cours de modification...');
+                document.getElementById('ping').textContent = JSON.parse(data.status.response_time) / 4
+            } else {
+                console.log("Fetched successfully!");
+                console.log('Page web en cours de modification...');
+                console.log('Suppresion des boxs en cours...');
+                console.log('Suppresion de .infos en cours...');
+                document.getElementsByClassName('infos').item(0).textContent = "Pending";
+                if (document.getElementsByClassName('infos').item(1)) document.getElementsByClassName('infos').item(1).remove();
+                const ico = document.createElement('span');
+                document.getElementById('scriptjs_rescue').appendChild(ico);
+                document.getElementsByClassName('infos').item(0).innerHTML = "";
+                document.getElementsByClassName('infos').item(0).appendChild(ico);
+                ico.textContent = "Hors Ligne"
+                ico.style.backgroundColor = "red";
+                ico.style.padding = "16px 0";
+                ico.style.width = "95%";
+                ico.style.color = "rgb(240, 240, 240)";
+                ico.style.fontSize = "150%";
+                ico.style.borderRadius = "7px";
+                ico.style.textAlign = "center";
+                ico.style.margin = "0 auto";
+            }
+            
 
             document.getElementById('refreshcounter').textContent = "XX";
             console.log('Page web modifiée avec succès!');
@@ -107,6 +128,30 @@ async function loop(id) {
         });
         await wait(20); // répétez pour
         loop('§k'); // faire comme mc
+    } else if (id === "ipanim") {
+        const txt = ["k", "a", "y", "s", "k", "y", ".", "m", "i", "n", "e", ".", "f", "u", "n"];
+
+        const target = document.getElementById("ipshow");
+
+        let index = 0;
+
+        function animMeMORE() {
+            if (index < txt.length) {
+                target.innerHTML += txt[index];
+                index++;
+                setTimeout(animMeMORE, 150)
+            } else {
+                setTimeout(resetText, 1575);
+            }
+        }
+
+        animMeMORE()
+
+        function resetText() {
+            target.innerHTML = "";
+            index = 0;
+            loop('ipanim');
+        }
     }
 }
 
@@ -117,10 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2);
     
     loop('cur');
-    setTimeout(() => {
-        loop('datas');
-        loop('§k');
-    }, 465);
+    loop('ipanim')
+    loop('datas');
+    loop('§k');
 });
 
 function replaceMinecraftCodes(text) {
@@ -147,10 +191,10 @@ function replaceMinecraftCodes(text) {
         '§e': '<span style="color: yellow;">',
         '§f': '<span style="color: white;">',
         '§r': '</span>',
-        '§l': '<span style="font-weight: bold;">',
-        '§n': '<span style="text-decoration: underline;">',
-        '§m': '<span style="text-decoration: line-through;">',
-        '§k': '<span class="randomchar-mcstyle">'
+        '§l': '<span style="font-weight: bold; color: white;">',
+        '§n': '<span style="text-decoration: underline; color: white;">',
+        '§m': '<span style="text-decoration: line-through; color: white;">',
+        '§k': '<span class="randomchar-mcstyle" style="color: white;">'
     };
 
     let formattedText = text.replace(/§[0-9a-fklmnor]/g, function(match) {
