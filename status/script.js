@@ -129,7 +129,7 @@ async function loop(id, plus) {
         await wait(20); // répétez pour
         loop('§k'); // faire comme mc
     } else if (id === "ipanim") {
-        const txt = ["k", "a", "y", "s", "k", "y", ".", "m", "i", "n", "e", ".", "f", "u", "n"];
+        const txt = ["s", "o", "y", "a", "m", "c", ".", "m", "i", "n", "e", ".", "f", "u", "n"];
 
         const target = document.getElementById("ipshow");
 
